@@ -12,12 +12,21 @@ def multiply(a, b):
 def divid(a, b):
     return a / b
 
-def calculate_price():
-        kayla = add(10, 5)
-        op = subtract(50, 25)
-        rice = multiply(30, 3)
-        nunu = divid(100, 20)
-        final_output = kayla + op + rice + nunu
-        print(final_output)
+num1 = float(input("enter a number -> "))
+op = input("select an operator (+, -, *, /) -> ")
+num2 = float(input("enter another number-> "))
 
-calculate_price()
+if op == "+":
+    result = add(num1, num2)
+
+elif op == "-":
+    result = subtract(num1, num2) 
+
+elif op == "*":
+    result = multiply(num1, num2)
+
+elif op == "/":
+    result = divid(num1, num2)
+
+print(result)     
+         
