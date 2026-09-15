@@ -1,8 +1,8 @@
 from calculator_logic import add, subtract, multiply, divide
 
-num1 = float(input("enter first number->"))
+num1 = int(input("enter first number->"))
 op = input("enter operator (+, -, *, /)->")
-num2 = float(input("enter second number->"))
+num2 = int(input("enter second number->"))
 
 if op == "+":
     result = add(num1, num2)
