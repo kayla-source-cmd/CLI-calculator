@@ -1,27 +1,28 @@
-"""Calculator logic for a simple arithmetic CLI application."""
-
-
 def add(a, b):
-    """Return the sum of a and b."""
     return a + b
 
-
 def subtract(a, b):
-    """Return the difference between a and b."""
     return a - b
 
-
 def multiply(a, b):
-    """Return the product of a and b."""
     return a * b
 
-
 def divide(a, b):
-    """Return the quotient of a divided by b.
-
-    Raises:
-        ZeroDivisionError: If b equals 0.
-    """
-    if b == 0:
-        raise ZeroDivisionError("cannot divide by zero")
     return a / b
+
+num1 = float(input("Enter first number: "))
+op = input("Enter operator (+, -, *, /): ")
+num2 = float(input("Enter second number: "))
+
+if op == "+":
+    result = add(num1, num2)
+elif op == "-":
+    result = subtract(num1, num2)
+elif op == "*":
+    result = multiply(num1, num2)
+elif op == "/":
+    result = divide(num1, num2)
+else:
+    result = "Invalid operator"
+
+print("Result:", result)
