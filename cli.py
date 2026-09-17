@@ -8,6 +8,8 @@ def multiply(a, b):
     return a * b
 
 def divide(a, b):
+    if b == 0:
+        return "Error: Can not divide by zero"
     return a / b
 
 num1 = float(input("enter a number -> "))
