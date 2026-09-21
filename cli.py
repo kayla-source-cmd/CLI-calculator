@@ -1,34 +1,26 @@
-def add(a, b):
-    return a + b
+from calculator_logic import add, subtract, multiply, divide
 
-def subtract(a, b):
-    return a - b
+while True:
+    try:
+        num1 = float(input("Enter first number: "))
+        op = input("Enter operator (+, -, *, /): ")
+        num2 = float(input("Enter second number: "))
 
-def multiply(a, b):
-    return a * b
+        if op == "+":
+            result = add(num1, num2)
+        elif op == "-":
+            result = subtract(num1, num2)
+        elif op == "*":
+            result = multiply(num1, num2)
+        elif op == "/":
+            result = divide(num1, num2)
+        else:
+            result = "Invalid operator"
 
-def divide(a, b):
-    if b == 0:
-        return "Error: Can not divide by zero"
-    return a / b
+        print("Result:", result)
+    except ValueError:
+        print("Please enter valid numbers.")
 
-num1 = float(input("enter a number -> "))
-op = input("select an operator (+, -, *, /) -> ")
-num2 = float(input("enter another number-> "))
-
-if op == "+":
-    result = add(num1, num2)
-
-elif op == "-":
-    result = subtract(num1, num2)
-
-elif op == "*":
-    result = multiply(num1, num2)
-
-elif op == "/":
-    result = divide(num1, num2)
-
-else:
-    result = "Invalid operator"
-
-print(result)
+    again = input("Calculate again? (y/n): ")
+    if again != "y":
+        break
