@@ -4,7 +4,6 @@ from calculator_logic import add, subtract, multiply, divide
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
-
 def home():
     result = ""
     if request.method == "POST":
@@ -24,3 +23,6 @@ def home():
             result = "Invalid operator"
 
     return render_template("index.html", result=result)
+
+if __name__ == "__main__":
+    app.run(debug=True)
